@@ -56,7 +56,7 @@ if __name__ == '__main__':
 	mainloop = GObject.MainLoop()
 
 	obj = bus.get_object(BUS_NAME, "/org/bluez");
-	manager = dbus.Interface(obj, AGENT_INTERFACE)
+	manager = dbus.Interface(obj, "org.bluez.AgentManager1")
 	manager.RegisterAgent(path, capability)
 
 	print("Agent registered")
